@@ -1,0 +1,36 @@
+Introduction to Retrieval-Augmented Generation (RAG)
+
+Retrieval-Augmented Generation (RAG) is an AI technique that improves large language model (LLM)
+responses by retrieving relevant external knowledge before generating an answer.
+
+How RAG Works
+-------------
+1. Ingestion: Documents are loaded, cleaned, and split into chunks.
+2. Embedding: Each chunk is converted to a vector representation using an embedding model.
+3. Indexing: Vectors are stored in a vector database (e.g. ChromaDB) for fast similarity search.
+4. Retrieval: When a query arrives, the most similar document chunks are fetched.
+5. Generation: The retrieved chunks are injected as context into the LLM's prompt.
+6. Response: The LLM generates a grounded, factual answer using only the supplied context.
+
+Benefits of RAG
+---------------
+- Reduces hallucinations by grounding answers in retrieved facts.
+- Enables the model to answer questions about private or recent data without fine-tuning.
+- Cost-effective: retrieval is cheap compared to retraining a large model.
+- Auditable: answers can be traced back to specific source documents.
+
+LangChain and LangGraph
+-----------------------
+LangChain is a Python framework that provides abstractions for document loaders, text splitters,
+embedding models, vector stores, and LLM chains. LangGraph extends LangChain with a stateful,
+graph-based execution model — enabling complex multi-step workflows such as self-corrective RAG.
+
+ChromaDB
+--------
+ChromaDB is an open-source, embedded vector database optimised for AI applications. It stores
+document embeddings on disk and supports fast approximate nearest-neighbour (ANN) search.
+
+FastAPI
+-------
+FastAPI is a modern, high-performance Python web framework. Its automatic OpenAPI schema generation
+and Pydantic validation make it ideal for building production AI APIs.
